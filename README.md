@@ -3,8 +3,7 @@
 
 ## Overview
 This repository contains the solutions for a lab, focused on object storage optimization and Big Data analysis using MapReduce. The implementation is written in Java and addresses two main parts:
-1. Object Storage Load Balancing and Consistent Hashing.
-2. Analyzing anonymized web server logs to detect patterns leading to purchases.
+1. Analyzing anonymized web server logs to detect patterns leading to purchases.
 ----
 ## Big Data Analysis with MapReduce
 
