@@ -1,1 +1,99 @@
-# Hadoop-MapReduce
+
+# Hadoop MapReduce: Object Storage and Big Data Analysis
+
+## Overview
+This repository contains the solutions for a lab, focused on object storage optimization and Big Data analysis using MapReduce. The implementation is written in Java and addresses two main parts:
+1. Object Storage Load Balancing and Consistent Hashing.
+2. Analyzing anonymized web server logs to detect patterns leading to purchases.
+
+---
+
+## Part 1: Object Storage and Consistent Hashing
+
+### Tasks
+1. **Evaluate Load Balancing**:
+   - Analyze the performance of Consistent Hashing (CH) in a heterogeneous storage environment with disk sizes of 256GB, 512GB, and 1TB.
+   - Determine the optimal `partition power` to achieve load balancing.
+
+2. **Propose Enhancements**:
+   - Address imbalances caused by CH, where larger disks are overloaded while smaller disks remain underutilized.
+   - Propose and justify an improved CH mechanism.
+
+### Deliverables
+- A detailed explanation of the analysis and proposed enhancements in `hw4_part1_solution.pdf`.
+
+---
+
+## Part 2: Big Data Analysis with MapReduce
+
+### Problem
+Analyze anonymized server logs to identify user behavior patterns. Specifically, detect sequences of page visits where a purchase occurs on the third visit.
+
+### Input Format
+- **Log File (CSV)**:
+  - **Timestamp (TS)**: `YYYYMMDDhhmmss.milli`
+  - **SessionID (SID)**
+  - **ProductPageID (PPID)`
+  - **PurchaseIndicator (PI)**: `0` (no purchase) or `1` (purchase)
+
+### Output Format
+A sorted list of page pairs leading to purchases, along with their occurrence counts.
+
+### Implementation Steps
+1. **Step 1**: Aggregate events by `SessionID` and sort by `Timestamp`.
+2. **Step 2**: Generate triples of product page visits for each session.
+3. **Step 3**: Count occurrences of page pairs leading to purchases.
+4. **Step 4**: Sort results by count in descending order, breaking ties lexicographically.
+
+### Files
+- `MapReduceStep1.java`: Aggregation and sorting by `SessionID`.
+- `MapReduceStep2.java`: Generate product visit triples.
+- `MapReduceStep3.java`: Count purchase sequences.
+- `MapReduceStep4.java`: Sort results by count.
+
+### Usage
+```bash
+# Compile Java files
+javac -cp /path/to/hadoop-core.jar:. MapReduceStep1.java MapReduceStep2.java MapReduceStep3.java MapReduceStep4.java
+
+# Execute MapReduce steps
+hadoop jar /path/to/hadoop-core.jar MapReduceStep1 /input/path /output/path1
+hadoop jar /path/to/hadoop-core.jar MapReduceStep2 /output/path1 /output/path2
+hadoop jar /path/to/hadoop-core.jar MapReduceStep3 /output/path2 /output/path3
+hadoop jar /path/to/hadoop-core.jar MapReduceStep4 /output/path3 /output/final_output
+```
+
+---
+
+## Repository Structure
+```plaintext
+.
+├── part1/
+│   ├── hw4_part1_solution.pdf
+├── part2/
+│   ├── MapReduceStep1.java
+│   ├── MapReduceStep2.java
+│   ├── MapReduceStep3.java
+│   ├── MapReduceStep4.java
+│   ├── sample_input.csv
+│   ├── expected_output.csv
+└── README.md
+```
+
+---
+
+## Notes
+1. Ensure the Java code adheres to Hadoop's MapReduce framework requirements.
+2. Validate outputs against the provided sample input and other test datasets.
+
+---
+
+## Submission Instructions
+1. Place your solutions in the respective `part1/` and `part2/` directories.
+2. Ensure all scripts and files follow the specified format.
+3. Push the repository to GitHub for submission.
+
+---
+
+## Author
+Developed as part of the course's Big Data and Distributed Systems assignment.
