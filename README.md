@@ -49,16 +49,18 @@ hadoop jar /path/to/hadoop-core.jar MapReduceStep4 /output/path3 /output/final_o
 ## Repository Structure
 ```plaintext
 .
-├── part1/
-│   ├── hw4_part1_solution.pdf
-├── part2/
-│   ├── MapReduceStep1.java
-│   ├── MapReduceStep2.java
-│   ├── MapReduceStep3.java
-│   ├── MapReduceStep4.java
-│   ├── sample_input.csv
-│   ├── expected_output.csv
+├── javaFiles/
+│   ├── MapStep1.java
+│   ├── MapStep2.java
+│   ├── MapStep3.java
+│   ├── MapStep4.java
+│   ├── ReduceStep1.java
+│   ├── ReduceStep2.java
+│   ├── ReduceStep3.java
+│   ├── ReduceStep4.java
+│   ├── Main.java
 └── README.md
+
 ```
 
 ---
