@@ -5,26 +5,8 @@
 This repository contains the solutions for a lab, focused on object storage optimization and Big Data analysis using MapReduce. The implementation is written in Java and addresses two main parts:
 1. Object Storage Load Balancing and Consistent Hashing.
 2. Analyzing anonymized web server logs to detect patterns leading to purchases.
-
----
-
-## Part 1: Object Storage and Consistent Hashing
-
-### Tasks
-1. **Evaluate Load Balancing**:
-   - Analyze the performance of Consistent Hashing (CH) in a heterogeneous storage environment with disk sizes of 256GB, 512GB, and 1TB.
-   - Determine the optimal `partition power` to achieve load balancing.
-
-2. **Propose Enhancements**:
-   - Address imbalances caused by CH, where larger disks are overloaded while smaller disks remain underutilized.
-   - Propose and justify an improved CH mechanism.
-
-### Deliverables
-- A detailed explanation of the analysis and proposed enhancements in `hw4_part1_solution.pdf`.
-
----
-
-## Part 2: Big Data Analysis with MapReduce
+----
+## Big Data Analysis with MapReduce
 
 ### Problem
 Analyze anonymized server logs to identify user behavior patterns. Specifically, detect sequences of page visits where a purchase occurs on the third visit.
